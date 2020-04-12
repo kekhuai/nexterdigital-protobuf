@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+message Request {
+    message Metadata {
+        string name = 1;
+    }
+    message Chunk {
+        bytes data = 1;
+    }
+    oneof value {
+        Metadata metadata = 1;
+        Chunk chunk = 2;
+    }
+}
+
+message Response {
+    string code = 1;
+}
+
+service UploadService {
+    rpc Upload(Request) returns (Response);
+}
