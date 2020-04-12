@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-option go_package = "uploader";
-
 message Request {
     message Metadata {
         string name = 1;
